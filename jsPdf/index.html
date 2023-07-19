@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="contentToPrint" id="pdf1">
+      <h1>What is Lorem Ipsum?</h1>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+    </div>
+    <div class="contentToPrint" id="pdf2">
+      <h1>2222</h1>
+      <p>p2</p>
+    </div>
+    <button id="download1" data-target-id="pdf1">DL1</button>
+    <button id="download2" data-target-id="pdf2">DL2</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+      const doc = new window.jspdf.jsPDF();
+
+      function onClickButton({ target }) {
+        const targetId = target.dataset.targetId;
+        const elementHTML = document.getElementById(targetId);
+        console.log(targetId, elementHTML);
+
+        doc.html(elementHTML, {
+          callback: function (doc) {
+            // Save the PDF
+            doc.save("document-html.pdf");
+          },
+          margin: [10, 10, 10, 10],
+          autoPaging: "text",
+          x: 0,
+          y: 0,
+          width: 190, //target width in the PDF document
+          windowWidth: 675,
+        });
+      }
+
+      const download1 = document.getElementById("download1");
+      download1.addEventListener("click", onClickButton);
+      const download2 = document.getElementById("download2");
+      download2.addEventListener("click", onClickButton);
+    </script>
+  </body>
+</html>

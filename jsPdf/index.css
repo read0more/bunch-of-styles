@@ -1,0 +1,14 @@
+.contentToPrint {
+  position: absolute;
+  z-index: -1;
+  clip-path: inset(0 100% 0 0);
+
+}
+
+#pdf1 h1 {
+  color: cyan;
+}
+
+#pdf2 h1 {
+  color: red;
+}
