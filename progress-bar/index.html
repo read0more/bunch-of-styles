@@ -4,65 +4,23 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div style="height: 500px"></div>
-    <div class="container">
-      <div id="progress-bar"></div>
-      <div class="card-list">
-        <div class="card" data-index="0">Card 1</div>
-        <div class="card" data-index="1">Card 2</div>
-        <div class="card" data-index="2">Card 3</div>
-        <div class="card" data-index="3" style="height: 300px">Card 4</div>
-        <div class="card" data-index="4">Card 5</div>
-        <div class="card" data-index="5">Card 6</div>
-        <div class="card" data-index="6">Card 7</div>
-        <div class="card" data-index="7">Card 8</div>
-        <div class="card" data-index="8">Card 9</div>
-        <div class="card" data-index="9">Card 10</div>
-      </div>
-    </div>
-    <div style="height: 500px"></div>
-
-    <script>
-      const cards = document.querySelectorAll(".card");
-      const cardHeights = [];
-      cards.forEach(function (card) {
-        cardHeights.push(card.getBoundingClientRect().height);
-      });
-
-      function handleIntersect(entries, observer) {
-        let target = -Infinity;
-        entries.forEach(function (entry) {
-          if (entry.intersectionRatio < 1) return;
-
-          if (target < entry.target.dataset.index) {
-            target = entry.target.dataset.index;
-          }
-        });
-
-        if (target === -Infinity) return;
-
-        let calcedHeight = 0;
-
-        for (let i = 0; i <= target; i++) {
-          console.log(target);
-          calcedHeight += cardHeights[i];
-        }
-
-        document.querySelector("#progress-bar").style.height =
-          calcedHeight + "px";
-      }
-
-      const cardList = document.querySelector(".card-list");
-      const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 1.0,
-      };
-      const observer = new IntersectionObserver(handleIntersect, options);
-
-      cards.forEach(function (card) {
-        observer.observe(card);
-      });
-    </script>
+    <section>
+      <div>
+        <h1>Progress Bar</h1>
+        <div class="container">
+          <div class="divider">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="cards">
+          </div>
+        <div id="card-template" class="card" data-index="0" style="display: none;">
+          <div class="left-point"></div>
+          <div class="body">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+    </section>
+    <script src="index.js" defer></script>
   </body>
 </html>
