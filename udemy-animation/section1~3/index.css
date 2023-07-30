@@ -1,0 +1,35 @@
+body {
+  /* Body와 보는 사람이 10000px이 떨어져있다 */
+  perspective: 10000px;
+  padding-bottom: 5rem;
+}
+
+.box {
+  margin: 150px;
+  width: 500px;
+  height: 200px;
+  transition: background-color 0.3s ease, transform 1s ease 0.3s;
+}
+
+.box:hover {
+  background-color: cyan;
+  transform: rotate(1turn) skew(-20deg);
+}
+
+.hanging-box {
+  /* transform-origin: 50% 50%; */ /* default */
+  transform-origin: top left;
+}
+
+.z {
+  width: 500px;
+  height: 200px;
+  /* background-image: url('./cat.jpg'); */
+  background: url('./cat.jpg') no-repeat center center / cover;
+  transition: transform 1s ease 0.2s;
+}
+
+.z:hover {
+  /* transform: translateZ(1000px); 작아진다는게 아니라 perspective - translateZ 값만큼 가까워 졌다는 의미 */
+  transform: rotateX(70deg) rotateY(40deg) rotateZ(30deg);
+}
