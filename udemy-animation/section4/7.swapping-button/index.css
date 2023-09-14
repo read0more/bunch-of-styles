@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* reset css */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button {
+  width: 200px;
+  height: 100px;
+  color: white;
+  border: 4px solid cadetblue;
+  padding: 1em;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  color: transparent;
+}
+
+button::before {
+  top: 0;
+  left: 0;
+  content: 'Hover me!';
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: brown;
+  transition: all 1s ease;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translate(0, 0);
+}
+
+button:hover:before {
+  transform: translate(100%, -100%);
+}
+
+button::after {
+  top: 0;
+  left:0;
+  content: 'Hover me!';
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: brown;
+  transition: all 1s ease;
+  transform: translate(-100%, 100%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+button:hover:after {
+  transform: translate(0, 0);
+}
