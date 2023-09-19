@@ -17,6 +17,7 @@ button {
   font-size: 1.5rem;
   position: relative;
   border: 3px solid tomato;
+  color: transparent;
   cursor: pointer;
   letter-spacing: 2px;
 }
@@ -33,10 +34,12 @@ button:before {
   align-items: center;
   transition: all 0.5s;
   background-color: tomato;
+  color: black;
 }
 
 button:hover:before {
-  transform: translate(100%, 0) rotateY(360deg) scale(0);
+  left: 100%;
+  transform: rotateY(360deg) scale(0);
   opacity: 0;
 }
 
@@ -54,10 +57,11 @@ button:after {
   background-color: tomato;
   transform: scale(0) rotateY(0);
   opacity: 0;
+  color: black;
 }
 
 button:hover:after {
   left: 0;
-  transform: translate(100%, 0) rotateY(360deg);
+  transform: scale(1) rotateY(360deg);
   opacity: 1;
 }
