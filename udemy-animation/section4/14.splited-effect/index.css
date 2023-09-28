@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* reset css */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button {
+  padding: 40px 80px;
+  font-size: 1.5rem;
+  position: relative;
+  border: 3px solid tomato;
+  color: tomato;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+button:hover {
+  color: white;
+}
+
+button:before,
+button:after,
+span:before,
+span:after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: tomato;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+button:before {
+  left:0;
+  top: -100%;
+}
+
+button:after {
+  left: 25%;
+  top: 100%;
+  transition-delay: 0.2s;
+}
+
+span:before {
+  right: 25%;
+  top: -100%;
+  transition-delay: 0.3s;
+}
+
+span:after {
+  right: 0;
+  top: 100%;
+  transition-delay: 0.4s;
+}
+
+button:hover:before,
+button:hover:after,
+button:hover span:before,
+button:hover span:after {
+  top: 0;
+}
