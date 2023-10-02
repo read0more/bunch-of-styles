@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* reset css */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 30px 50px;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  background-color: cadetblue;
+  position: relative;
+  cursor: pointer;
+}
+
+button::before {
+  content: ""; 
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: -5px;
+  left: -5px;
+  border-top: 2px solid cadetblue;
+  border-left: 2px solid cadetblue;
+  transition: all 0.5s ease;
+}
+
+button:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+button::after {
+  content: ""; 
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 2px solid cadetblue;
+  border-right: 2px solid cadetblue;
+  transition: all 0.5s ease;
+}
+
+button:hover::after {
+  width: 100%;
+  height: 100%;
+}
