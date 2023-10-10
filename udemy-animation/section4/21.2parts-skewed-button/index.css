@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #10ac84;
+}
+
+/* reset css */
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button {
+  width: 200px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 10px;
+  text-indent: 15px;
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #ee5253;
+  transform: skewX(30deg);
+  z-index: 1;
+  left: -1%;
+  top: -5px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: skewX(0deg);
+  top: 0;
+  left: 50%;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #0a3d62;
+  transform: skewX(30deg);
+  z-index: 1;
+  left: 51%;
+  top: 5px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1;
+}
+
+button:hover::after {
+  transform: skewX(0deg);
+  top: 0;
+  left: 0;
+}
