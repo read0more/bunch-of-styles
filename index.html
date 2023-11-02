@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    /* transform: scaleY(0);
+    transform-origin: top; */
+  }
+
+  .title {
+    cursor: pointer;
+  }
+
+  .title:checked ~ .content {
+    max-height: 100vh;
+    /* transform: scaleY(1); */
+  }
+</style>
+</head>
+<body>
+
+<input type="checkbox" class="title">클릭하여 내용 보기</input>
+<div class="content">
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+  </p>
+</div>
+</body>
+</html>
